@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 export default function Footer(props) {
 
     const {handleToggleModal, data} = props

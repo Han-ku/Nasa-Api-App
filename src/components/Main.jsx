@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 export default function Main(props) {
 
     const {data} = props
