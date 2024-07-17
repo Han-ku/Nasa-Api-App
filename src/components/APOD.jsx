@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-export default function Main(props) {
+export default function APOD(props) {
 
     const {data} = props
 

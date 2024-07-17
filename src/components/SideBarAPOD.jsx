@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-export default function SideBar(props) {
+export default function SideBarAPOD(props) {
 
     const {handleToggleModal, data} = props
 

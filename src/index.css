@@ -55,6 +55,7 @@ body::-webkit-scrollbar-thumb:hover {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  margin-bottom: 2rem;
 }
 
 .mediaContainer {
@@ -79,33 +80,33 @@ body::-webkit-scrollbar-thumb:hover {
   width: 100%;
 }
 
-footer {
-  margin-top: auto; /* Push footer to the bottom of the section */
+.apod_title_container {
+  margin-top: auto; 
   width: 100%;
   display: flex;
   justify-content: space-between;
   gap: 1rem;
   padding: 1rem;
-  background: black; /* Ensure the footer background is black */
+  background: black; 
 }
 
-footer div {
+.apod_title_container div {
   display: flex;
   flex-direction: column;
 }
 
-footer h2, 
+.apod_title_container h2, 
 .neoWs_title h2 {
   font-size: 1.4rem;
 }
 
-footer h1,
+.apod_title_container h1,
 .neoWs_title h1{
   font-size: 0.9rem;
   font-weight: 200;
 }
 
-footer button {
+.apod_title_container button {
   background: transparent;
   border: none;
   outline: none;
@@ -116,11 +117,11 @@ footer button {
   opacity: 0.7;
 }
 
-footer button i {
+.apod_title_container button i {
    font-size: 1.3rem;
 }
 
-footer button:hover {
+.apod_title_container button:hover {
   opacity: 1;
 }
 
@@ -219,11 +220,16 @@ footer button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0 1rem;
 }
 
 .neoWs_title h2,
-.neoWs_card h3 {
-  text-align: center;
+.neoWs_title h1 {
+  align-self: start;
+}
+
+.neoWs_title h2 {
+  margin-bottom: .4rem;
 }
 
 .neoWs_title p {

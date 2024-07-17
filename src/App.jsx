@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
-import Footer from "./components/Footer"
-import Main from "./components/Main"
-import SideBar from "./components/SideBar"
+import TitleAPOD from "./components/TitleAPOD"
+import APOD from "./components/APOD"
+import SideBarAPOD from "./components/SideBarAPOD"
 import NeoWs from "./components/NeoWs"
 
 function App() {
@@ -52,16 +52,16 @@ function App() {
   return (
     <>
       <section className="section_APOD">
-        { data ? (<Main data={data}/>) : (
+        {data && (
+          <TitleAPOD data={data} handleToggleModal={handleToggleModal} />
+        )}
+        { data ? (<APOD data={data}/>) : (
           <div className="loadingState">
             <i className="fa-solid fa-gear"></i>
           </div>
         )}
         {showModal && (
-            <SideBar data={data} handleToggleModal={handleToggleModal}/>
-        )}
-        {data && (
-          <Footer data={data} handleToggleModal={handleToggleModal} />
+            <SideBarAPOD data={data} handleToggleModal={handleToggleModal}/>
         )}
       </section>
       <section className="section_NeoWs">

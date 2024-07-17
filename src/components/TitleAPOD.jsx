@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
-export default function Footer(props) {
+export default function TitleAPOD(props) {
 
     const {handleToggleModal, data} = props
 
     return (
-        <footer>
+        <div className="apod_title_container">
             <div className="bgGradient"></div>
             <div>
                 <h1>APOD(Astronomy Picture of the Day) Project</h1>
@@ -13,6 +13,6 @@ export default function Footer(props) {
             <button onClick={handleToggleModal}>
                 <i className="fa-solid fa-circle-info"></i>
             </button>
-        </footer>
+        </div>
     )
 }
