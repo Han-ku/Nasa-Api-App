@@ -127,7 +127,7 @@ footer button:hover {
   position: absolute;
   inset: 0;
   background: black;
-  opacity: .6;
+  opacity: 0.6;
 }
 
 .sidebarContents {
@@ -139,7 +139,7 @@ footer button:hover {
   padding: 1rem;
   overflow-y: scroll;
   height: 100%;
-  width: 90%;
+  width: 80%;
   max-width: 800px;
   margin-left: auto;
   background: black;
@@ -173,14 +173,13 @@ footer button:hover {
 .descriptionContainer {
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: 0.5rem;
 }
 
 .descriptionTitle {
   font-size: 1.1rem;
   font-weight: 200;
 }
-
 
 .loadingState {
   display: flex;
@@ -209,10 +208,18 @@ footer button:hover {
     position: relative;
     inset: unset;
     min-width: 30%;
+    max-height: 100vh;
     box-shadow: 0 0 40px 1px black;
   }
 
   .sidebarContents {
     margin: unset;
+    width: 100%;
+  }
+
+  .bgOverlay {
+    right: 0;
+    left: unset;
+    width: 100vw;
   }
 }
