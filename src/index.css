@@ -40,35 +40,27 @@ body::-webkit-scrollbar-thumb {
 
 .sidebar::-webkit-scrollbar-thumb:hover,
 .sidebarContents::-webkit-scrollbar-thumb:hover,
-body::-webkit-scrollbar-thumb:hover{
+body::-webkit-scrollbar-thumb:hover {
   background-color: rgba(255, 255, 255, 0.76);
 }
 
 #root {
   min-height: 100vh;
   display: flex;
-  position: relative;
-}
-
-/* .mediaContainer {
-  display: flex;
   flex-direction: column;
 }
 
-.bg_video,
-.bg_image {
-  width: 100%;
-  height: 100%;
+.section_APOD {
   flex: 1;
-  object-fit: cover;
-  object-fit: cover; 
-  border: none;
-} */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
 .mediaContainer {
   position: relative;
   width: 100%;
-  height: 100vh; 
+  height: 80vh; 
   overflow: hidden; 
 }
 
@@ -85,18 +77,16 @@ body::-webkit-scrollbar-thumb:hover{
 
 .bg_video {
   width: 100%;
-  height: 80%;
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  margin-top: auto; /* Push footer to the bottom of the section */
   width: 100%;
   display: flex;
   justify-content: space-between;
   gap: 1rem;
   padding: 1rem;
+  background: black; /* Ensure the footer background is black */
 }
 
 footer div {
@@ -104,11 +94,13 @@ footer div {
   flex-direction: column;
 }
 
-footer h2 {
+footer h2, 
+.neoWs_title h2 {
   font-size: 1.4rem;
 }
 
-footer h1 {
+footer h1,
+.neoWs_title h1{
   font-size: 0.9rem;
   font-weight: 200;
 }
@@ -132,7 +124,6 @@ footer button:hover {
   opacity: 1;
 }
 
-
 .bgGradient {
   position: absolute;
   inset: 0;
@@ -142,11 +133,14 @@ footer button:hover {
 
 .sidebar {
   position: fixed;
-  inset: 0;
+  top: 0;
+  right: 0;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   z-index: 10;
   overflow-y: scroll;
+  background: black;
 }
 
 .bgOverlay {
@@ -171,7 +165,7 @@ footer button:hover {
   background: black;
 }
 
-.sidebarContents h2{
+.sidebarContents h2 {
   font-weight: 200;
   font-size: 1.4rem;
 }
@@ -220,6 +214,59 @@ footer button:hover {
   animation: spin 1s linear infinite;
 }
 
+.neoWs_title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.neoWs_title h2,
+.neoWs_card h3 {
+  text-align: center;
+}
+
+.neoWs_title p {
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.486);
+}
+
+.neoWs_cards_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.neoWs_card {
+  background-color: aliceblue;
+  color: black;
+  margin: 1rem 1.5rem;
+  padding: .5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 40px 1px rgba(243, 243, 243, 0.541);
+  transition: transform 0.3s ease;
+}
+
+.neoWs_card:hover {
+  transform: scale(1.05)
+}
+
+.neoWs_button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto 1rem; 
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.575);
+  text-decoration: underline;
+  border: none;
+  cursor: pointer;
+}
+
+.neoWs_button:hover {
+  color: rgb(255, 255, 255);
+}
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -231,8 +278,9 @@ footer button:hover {
 
 @media(min-width: 640px) {
   .sidebar {
-    position: relative;
-    inset: unset;
+    top: 0;
+    right: 0;
+    height: 100vh;
     min-width: 30%;
     max-height: 100vh;
     box-shadow: 0 0 40px 1px black;
@@ -247,5 +295,11 @@ footer button:hover {
     right: 0;
     left: unset;
     width: 100vw;
+  }
+}
+
+@media(max-width: 640px) {
+  .neoWs_cards_container {
+    flex-direction: column;
   }
 }
