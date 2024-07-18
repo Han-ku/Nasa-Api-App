@@ -3,6 +3,7 @@ import TitleAPOD from "./components/TitleAPOD"
 import APOD from "./components/APOD"
 import SideBarAPOD from "./components/SideBarAPOD"
 import NeoWs from "./components/NeoWs"
+import EPIC from "./components/EPIC"
 
 function App() {
   const [data, setData] = useState(null)
@@ -66,6 +67,9 @@ function App() {
       </section>
       <section className="section_NeoWs">
         <NeoWs/>
+      </section>
+      <section className="section_EPIC">
+        <EPIC />
       </section>
     </>
   )
