@@ -1,3 +1,5 @@
+import 'react-tooltip/dist/react-tooltip.css';
+import { Tooltip } from 'react-tooltip';
 /* eslint-disable react/prop-types */
 export default function SideBarAPOD(props) {
 
@@ -12,9 +14,10 @@ export default function SideBarAPOD(props) {
                     <p className="descriptionTitle">{data?.date}</p>
                     <p>{data?.explanation}</p>
                 </div>
-                <button onClick={handleToggleModal}>
+                <button id="arrowBtn" data-tooltip-content="Close additional information" onClick={handleToggleModal}>
                     <i className="fa-solid fa-arrow-right-long"></i>
                 </button>
+                <Tooltip anchorId="arrowBtn" place="top" effect="solid" />
             </div>
          
         </div>
