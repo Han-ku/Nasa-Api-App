@@ -243,6 +243,11 @@ body::-webkit-scrollbar-thumb:hover {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap; 
+  max-width: 100%; 
+  overflow: hidden; 
+  padding: 0 1rem; 
+  box-sizing: border-box;
 }
 
 .neoWs_card {
@@ -252,10 +257,20 @@ body::-webkit-scrollbar-thumb:hover {
   padding: .5rem;
   border-radius: 1rem;
   transition: transform  0.3s ease;
+  width: calc(100% - 2rem); 
+  max-width: 35em; 
+  text-align: center;
+  box-sizing: border-box;
 }
  
+.neoWs_card span {
+  text-decoration: underline;
+  color: rgb(255, 255, 255);
+}
 
-
+.neoWs_card p {
+  color: rgba(255, 255, 255, 0.479);
+}
 
 .neoWs_card:hover {
   transform: scale(1.05);
@@ -279,17 +294,54 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .section_EPIC {
-  margin:1.5rem 0 1.5rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  margin:1.5rem 0 1.5rem 0;
 }
+
 .epic_container {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+  flex-wrap: wrap;
+  box-sizing: border-box; 
+  padding: 0 1rem; 
+}
+
+.epic_title {
+  text-align: left; 
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+
+.sliderContainer {
+  width: 80%;
+  max-width: 500px; 
+  overflow: hidden;
+}
+
+.sliderWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .epic_info {
@@ -304,31 +356,14 @@ body::-webkit-scrollbar-thumb:hover {
   min-width: 30%;
   border-radius: 1em;
   box-shadow: 0 0 40px 1px rgba(243, 243, 243, 0.26);
-}
-
-.sliderContainer {
-  width: 80%;
-  max-width: 500px; 
-  margin: 0 auto; 
-}
-
-.sliderWrapper {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.slick-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+  box-sizing: border-box;
+  text-align: center; 
 }
 
 .sliderImg {
-  width: 50vw; 
+  width: 100%; 
   height: auto;
+  max-width: 50vw;
   max-height: 50vh; 
   object-fit: contain;
 }
@@ -362,10 +397,38 @@ body::-webkit-scrollbar-thumb:hover {
     left: unset;
     width: 100vw;
   }
+
+  .epic_container {
+    align-items: center;
+  }
+
+  .epic_info {
+    align-self: center;
+  }
+
 }
 
 @media(max-width: 640px) {
   .neoWs_cards_container {
     flex-direction: column;
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+
+  .epic_container {
+    flex-direction: column;
+    margin: 1rem 0;
+    align-items: flex-start;
+  }
+
+  .epic_info {
+    margin: 0 1rem 1.5rem 1rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .neoWs_card {
+    width: 100%; 
+    margin: 1rem 0;
   }
 }

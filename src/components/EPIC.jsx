@@ -52,8 +52,11 @@ export default function EPIC() {
 
     return (
         <>
-            <h2>EPIC(Earth Polychromatic Imaging Camera) Images</h2>
-            <h1 id="title-facts">And a few more useless facts</h1>
+            <div className="epic_title">
+                <h2>EPIC(Earth Polychromatic Imaging Camera) Images</h2>
+                <h1 id="title-facts">And a few more useless facts</h1>
+            </div>
+                
             <div className="epic_container">
                 <div className="epic_info">
                     <RandomFact/>

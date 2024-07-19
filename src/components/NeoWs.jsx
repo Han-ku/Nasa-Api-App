@@ -56,14 +56,14 @@ const NeoWs = () => {
                 {displayedNeos.map((neo) => (
                     <div className="neoWs_card" key={neo.neo_reference_id}>
                         <h3>Name: {neo.name}</h3>
-                        <p>Close Approach Date: {neo.close_approach_data[0]?.close_approach_date}</p>
-                        <p>Speed (km/h): {neo.close_approach_data[0]?.relative_velocity.kilometers_per_hour}</p>
+                        <p>Close Approach Date: <span>{neo.close_approach_data[0]?.close_approach_date}</span></p>
+                        <p>Speed (km/h): <span>{neo.close_approach_data[0]?.relative_velocity.kilometers_per_hour}</span></p>
                         <p>
                             Estimated Diameter (km):{" "}
-                            {neo.estimated_diameter.kilometers.estimated_diameter_min.toFixed(3)} -{" "}
-                            {neo.estimated_diameter.kilometers.estimated_diameter_max.toFixed(3)}
+                            <span>{neo.estimated_diameter.kilometers.estimated_diameter_min.toFixed(3)} -{" "}</span>
+                            <span>{neo.estimated_diameter.kilometers.estimated_diameter_max.toFixed(3)}</span>
                         </p>
-                        <p>Potentially Hazardous: {neo.is_potentially_hazardous_asteroid ? "Yes" : "No"}</p>
+                        <p>Potentially Hazardous: <span>{neo.is_potentially_hazardous_asteroid ? "Yes" : "No"}</span></p>
                     </div>
                 ))}
             </div>
