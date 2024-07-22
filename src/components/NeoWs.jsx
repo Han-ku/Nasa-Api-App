@@ -41,7 +41,14 @@ const NeoWs = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 2) % neoData.length)
       }
 
-    if(loading) return <div>Loading..</div>
+    if(loading) {
+        return (
+            <div className="loadingState">
+                <i className="fa-solid fa-gear"></i>
+            </div>
+        )
+    } 
+        
     if(error) return <div>Error: {error.message}</div>
 
     const displayedNeos = neoData.slice(currentIndex, currentIndex + 2)

@@ -56,9 +56,13 @@ export default function SpaceFact() {
         }, 500);
     }
 
-    if (loading) {
-        return <div>Loading...</div>
-    }
+    if(loading) {
+        return (
+            <div className="loadingState">
+                <i className="fa-solid fa-gear"></i>
+            </div>
+        )
+    } 
 
     if (error) {
         return <div>Error: {error}</div>
