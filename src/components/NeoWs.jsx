@@ -1,4 +1,6 @@
 import {useState, useEffect, useCallback} from "react"
+import 'react-tooltip/dist/react-tooltip.css';
+import { Tooltip } from 'react-tooltip';
 
 const NeoWs = () => {
 
@@ -63,7 +65,13 @@ const NeoWs = () => {
                             <span>{neo.estimated_diameter.kilometers.estimated_diameter_min.toFixed(3)} -{" "}</span>
                             <span>{neo.estimated_diameter.kilometers.estimated_diameter_max.toFixed(3)}</span>
                         </p>
-                        <p>Potentially Hazardous: <span>{neo.is_potentially_hazardous_asteroid ? "Yes" : "No"}</span></p>
+                        <p>Potentially Hazardous: <span id={`hazardous-${neo.neo_reference_id}`} 
+                            data-tooltip-content={neo.is_potentially_hazardous_asteroid ? 
+                                `This asteroid is potentially hazardous with a less than 1% chance of close approach to Earth.` 
+                                : "This asteroid is not potentially hazardous."}>
+                            {neo.is_potentially_hazardous_asteroid ? "Yes" : "No"}</span>
+                        </p>
+                        <Tooltip anchorId={`hazardous-${neo.neo_reference_id}`} place="bottom" effect="solid" />
                     </div>
                 ))}
             </div>
