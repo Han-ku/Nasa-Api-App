@@ -339,21 +339,41 @@ body::-webkit-scrollbar-thumb:hover {
   cursor: pointer;
 }
 
+
 .epic_info {
   flex: 1;
   padding: .5rem;
-  background-color: #2c2c2c;
-  color: white;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 30%;
-  border-radius: 1em;
-  box-shadow: 0 0 40px 1px rgba(243, 243, 243, 0.26);
+  min-width: 30%;  
   box-sizing: border-box;
   text-align: center; 
   width: 100%;
+}
+
+.fact_container {
+  background-color: #2c2c2c;
+  color: white;
+  border-radius: 1em;
+  box-shadow: 0 0 40px 1px rgba(243, 243, 243, 0.26);
+}
+
+#refreshBtn {
+  border: none;
+  margin-top: 1rem;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.575);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#refreshBtn:hover {
+  
+  color: rgba(255, 255, 255, 0.575);
+  
 }
 
 .sliderImg {
@@ -362,6 +382,29 @@ body::-webkit-scrollbar-thumb:hover {
   max-width: 50vw;
   max-height: 50vh; 
   object-fit: contain;
+}
+
+.fade-enter {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.fade-enter-active {
+  opacity: 1;
+}
+
+.fade-exit {
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+.fade-exit-active {
+  opacity: 0;
+}
+
+#fact-text {
+  word-break: break-word;
+  padding: 0 1rem .5rem;
 }
 
 @keyframes spin {

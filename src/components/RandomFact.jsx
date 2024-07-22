@@ -1,52 +1,67 @@
 import { useState, useEffect } from "react";
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 export default function SpaceFact() {
-    const [fact, setFact] = useState("");
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-    const [showFullFact, setShowFullFact] = useState(false);
-    const MAX_LENGTH = 200; // Максимальное количество символов
+    const [fact, setFact] = useState("")
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
+    const [showFullFact, setShowFullFact] = useState(false)
+    const [inProp, setInProp] = useState(true)
+    const MAX_LENGTH = 200; 
 
     const fetchFact = async () => {
-        setLoading(true);
-        setError(null);
+        setLoading(true)
+        setError(null)
 
         try {
-            const res = await fetch('https://uselessfacts.jsph.pl/random.json?language=en');
-            const data = await res.json();
-            setFact(data.text);
+            const res = await fetch('https://uselessfacts.jsph.pl/random.json?language=en')
+            const data = await res.json()
+            setFact(data.text)
         } catch (err) {
-            setError(err.message);
+            setError(err.message)
         } finally {
-            setLoading(false);
+            setLoading(false)
         }
-    };
+    }
 
     useEffect(() => {
-        fetchFact();
+        fetchFact()
         const interval = setInterval(() => {
-            fetchFact();
-        }, 60000); 
+            setInProp(false);
+            setTimeout(() => {
+                fetchFact();
+                setInProp(true);
+            }, 500);
+        }, 60000)
 
-        return () => clearInterval(interval); 
-    }, []);
+        return () => clearInterval(interval)
+    }, [])
 
     const handleReadMore = (e) => {
-        e.preventDefault();
-        setShowFullFact(true);
-    };
+        e.preventDefault()
+        setShowFullFact(true)
+    }
 
     const handleShowLess = (e) => {
-        e.preventDefault();
-        setShowFullFact(false);
-    };
+        e.preventDefault()
+        setShowFullFact(false)
+    }
+
+    const handleFactChanges = (e) =>  {
+        e.preventDefault()
+        setInProp(false);
+        setTimeout(() => {
+            fetchFact();
+            setInProp(true);
+        }, 500);
+    }
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <div>Loading...</div>
     }
 
     if (error) {
-        return <div>Error: {error}</div>;
+        return <div>Error: {error}</div>
     }
 
     const renderFact = () => {
@@ -72,9 +87,23 @@ export default function SpaceFact() {
     };
 
     return (
-        <div>
-            <h2>Random Fact</h2>
-            <p>{renderFact()}</p>
-        </div>
+        <>
+            <div className="fact_container">
+                <h2>Random Fact</h2>
+                <TransitionGroup>
+                    <CSSTransition
+                        in={inProp}
+                        timeout={500}
+                        classNames="fade"
+                        key={fact}
+                        unmountOnExit
+                    >
+                        <p id="fact-text">{renderFact()}</p>
+                    </CSSTransition>
+                </TransitionGroup>
+            </div>
+            <button id="refreshBtn" onClick={handleFactChanges}>Refresh the fact</button>
+        </>
+        
     );
 }
