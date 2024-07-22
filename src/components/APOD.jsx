@@ -81,7 +81,9 @@ export default function APOD() {
                     frameBorder="0">
                 </iframe>
             ) : (
-                <img src={data.url || data.hdurl} alt={data.title || 'bg_img'} className="bg_image"/>
+                <a href={data.url || data.hdurl} target="_blank" rel="noopener noreferrer">
+                    <img src={data.url || data.hdurl} alt={data.title || 'bg_img'} className="bg_image" />
+                </a>
             )}
             {showModal && <SideBarAPOD data={data} handleToggleModal={handleToggleModal} />}
         </div>
