@@ -8,7 +8,7 @@ export default function TitleAPOD(props) {
   return (
     <div className="apod_title_container">
       <div className="bgGradient"></div>
-      <div>
+      <div className='title'>
         <h1>APOD (Astronomy Picture of the Day) Project</h1>
         <h2>{data?.title}</h2>
       </div>

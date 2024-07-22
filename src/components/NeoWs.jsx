@@ -46,7 +46,7 @@ const NeoWs = () => {
 
     return (
         <> 
-            <div className="neoWs_title">
+            <div className="neoWs_title title">
                 <h1>NeoWs (Near Earth Object Web Service) Project</h1>
                 <h2>In case you are wondering if there are asteroids near Earth right now</h2>
                 <p>Date: {new Date().toISOString().split('T')[0]}</p>

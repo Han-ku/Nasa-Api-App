@@ -80,32 +80,56 @@ body::-webkit-scrollbar-thumb:hover {
   width: 100%;
 }
 
-.apod_title_container {
-  margin-top: auto; 
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem 1rem 0;
-  background: black; 
-  margin-top: 0;
-}
-
-.apod_title_container div {
+.title {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  width: 100%;
 }
 
 .apod_title_container h2, 
-.neoWs_title h2 {
+.neoWs_title h2, 
+.epic_title h2 {
   font-size: 1.4rem;
 }
 
 .apod_title_container h1,
 .neoWs_title h1,
-#title-facts {
+#title-facts,
+.epic_title h1 {
   font-size: 0.9rem;
   font-weight: 200;
+}
+
+.apod_title_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0 0;
+  background: black; 
+  margin-top: 0;
+}
+
+.neoWs_title h2,
+.neoWs_title h1,
+.epic_title h2,
+.epic_title h1,
+.apod_title_container h1,
+.apod_title_container h2 {
+  align-self: start;
+}
+
+.neoWs_title h2 {
+  margin-bottom: .4rem;
+}
+
+.neoWs_title p {
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.486);
+  white-space: nowrap;
 }
 
 .apod_title_container button {
@@ -217,28 +241,6 @@ body::-webkit-scrollbar-thumb:hover {
   animation: spin 1s linear infinite;
 }
 
-.neoWs_title {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0 1rem;
-}
-
-.neoWs_title h2,
-.neoWs_title h1 {
-  align-self: start;
-}
-
-.neoWs_title h2 {
-  margin-bottom: .4rem;
-}
-
-.neoWs_title p {
-  font-weight: 200;
-  color: rgba(255, 255, 255, 0.486);
-}
-
 .neoWs_cards_container {
   display: flex;
   flex-direction: row;
@@ -266,6 +268,7 @@ body::-webkit-scrollbar-thumb:hover {
 .neoWs_card span {
   text-decoration: underline;
   color: rgb(255, 255, 255);
+  white-space: nowrap;
 }
 
 .neoWs_card p {
@@ -315,14 +318,6 @@ body::-webkit-scrollbar-thumb:hover {
   padding: 0 1rem; 
 }
 
-.epic_title {
-  text-align: left; 
-  width: 100%;
-  box-sizing: border-box;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-}
-
 .sliderContainer {
   width: 80%;
   max-width: 500px; 
@@ -358,6 +353,7 @@ body::-webkit-scrollbar-thumb:hover {
   box-shadow: 0 0 40px 1px rgba(243, 243, 243, 0.26);
   box-sizing: border-box;
   text-align: center; 
+  width: 100%;
 }
 
 .sliderImg {
@@ -422,7 +418,6 @@ body::-webkit-scrollbar-thumb:hover {
   }
 
   .epic_info {
-    margin: 0 1rem 1.5rem 1rem;
     text-align: center;
     margin-bottom: 1.5rem;
   }
